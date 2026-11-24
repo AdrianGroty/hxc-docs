@@ -7,7 +7,17 @@ FEEDBACK recirculates earlier frames to make trails, echoes, or a delayed
 image. `Dry/Wet` blends the incoming frame with the loop. For a starting
 recipe, see [Make feedback trails](../../../guides/feedback-trails/).
 
-## Output
+## Chain send
+
+The `CHAIN` controls below are from a development build and still need
+verification in the released app.
+
+`Dry/Wet` and `Blend` are in the `CHAIN` row of `SENDS`. Leave the row on
+`SENDING` for the loop to contribute to the chain. `MUTED` keeps the row's
+settings while the chain passes FEEDBACK by; `x` removes the row.
+`+ Chain` restores a removed row. When `Feed back to` targets an earlier
+module, the loop runs inside the chain and these state controls are locked
+on `SENDING`.
 
 | Parameter | Control | Notes |
 |---|---|---|

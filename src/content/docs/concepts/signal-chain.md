@@ -9,8 +9,20 @@ what came before them. Each module's result becomes the input available to
 the next one. `Output` shows the result at the end of the chain.
 
 Module states are `LIVE`, `BYP`, and `MUTE`. `BYP` skips a module's
-contribution. `MUTE` clears the chain at that module: subsequent modules
-receive an empty image, and its Sends are empty.
+contribution. `MUTE` empties its sends. While the module sends to `CHAIN`,
+it also clears the chain at that point, so subsequent modules receive an
+empty image.
+
+Each module's `SENDS` section has a `CHAIN` row for its contribution to
+the running chain. Where present, the module's `Blend` and `Mix`, `Opacity`,
+or `Dry/Wet` controls sit in that row. Its `SENDING` / `MUTED` Rocker changes
+that contribution without changing the module's own state. Muting or
+removing the row lets the chain pass the module by, while AUX sends can still carry the module's
+full picture. `+ Chain` restores a removed row. A FEEDBACK loop routed to
+an earlier module keeps its `CHAIN` row locked on `SENDING`.
+
+These `CHAIN` controls are from a development build and still need
+verification in the released app.
 
 The `Blend` Selector sets how a module's image combines with what came
 before it. `FEEDBACK` also has `Loop Blend`, which sets how incoming frames

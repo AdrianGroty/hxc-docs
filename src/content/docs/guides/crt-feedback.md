@@ -29,7 +29,8 @@ and vertically.
 ## 2. Compare the source and result
 
 Select `Recursive memory` in `Chain` to show its `FEEDBACK` controls.
-In `Output`, set `Dry/Wet` to `0`.
+In `SENDS`, find the `CHAIN` row, keep it on `SENDING`, and set `Dry/Wet`
+to `0`.
 
 Only the moving hexagon outlines remain. Return `Dry/Wet` to `0.79` to
 bring back the recursive copies and CRT effects.

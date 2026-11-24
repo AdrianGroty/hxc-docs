@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "captureDate": "2026-11-24",
+  "baseline": {
+    "app": "Hex Composer",
+    "version": "v1.0.0-feedback-capture+f4692c2",
+    "distribution": "Local development compile, not a distributable release",
+    "appCommit": "f4692c2bd762e55bd36e534559d10fa415911e7b",
+    "sourceChanges": false,
+    "executableSha256": "14b37c22f278a5545c7f734564b6877d2a0261887bbec02e520ead1d3a704287",
+    "platform": "macOS arm64",
+    "osVersion": "26.7.3",
+    "osBuild": "25G342",
+    "renderer": "Apple M4, OpenGL 4.1 Metal - 90.5",
+    "buildOptions": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "VIZARD_RELEASE_VERSION": "v1.0.0-feedback-capture",
+      "VIZARD_EDITION": "full",
+      "VIZARD_MILK_CLOSED_SHADERS": "OFF"
+    },
+    "bundle": "Ad hoc signed development wrapper with an isolated temporary configuration directory; no packaged offline manual."
+  },
+  "processing": {
+    "script": "scripts/prepare-doc-images.mjs",
+    "operations": "Crop actual screenshots; optionally resize with Lanczos3; encode PNG with compression level 9 and adaptive filtering off. No annotations or generated UI.",
+    "annotationRegistry": "authoring/image-annotations.json (rendered as a separate site layer; PNG hashes describe unannotated pixels)",
+    "sharpVersion": "0.35.4",
+    "libvipsVersion": "8.18.6"
+  },
+  "images": [
+    {
+      "id": "feedback-trails-chain-controls",
+      "task": "Locate Decay in Loop and Dry/Wet in the CHAIN send for the feedback trail recipe.",
+      "page": "src/content/docs/guides/feedback-trails.md",
+      "patch": "authoring/captures/2026-11-24/setup/feedback-controls.hxc",
+      "patchSha256": "5411ce87c659622abe9d19879813eb32ba5f20706dfd2f0f87d1ea42c5ca7ce3",
+      "setup": "The existing public/examples/feedback-trails.hxc recipe, with only the module storage order swapped and chain_order remapped to preserve SHAPE before FEEDBACK. Loaded through the isolated profile startup default so FEEDBACK is selected without changing production code. The public example is unchanged.",
+      "source": "authoring/captures/2026-11-24/originals/feedback-controls-native.png",
+      "sourceKind": "App UI screenshot",
+      "published": "public/images/guides/feedback-trails/feedback-chain-controls.png",
+      "crop": {
+        "left": 2246,
+        "top": 252,
+        "width": 620,
+        "height": 926
+      },
+      "resize": null,
+      "annotations": "Two separate site-layer targets in authoring/image-annotations.json: Dry/Wet and Decay. No redactions or screenshot pixel edits.",
+      "layout": "Default dock layout; automatic UI scale at Retina 2x. Full native window 2880 x 1772 pixels.",
+      "verifiedChecks": [
+        "Compiled the unchanged identified app source successfully.",
+        "Loaded the preserved guide settings in the native macOS app through its startup-default loader.",
+        "Observed FEEDBACK LIVE, Loop Amount 1.00, Decay 0.975, Loop Blend Replace, SENDS > CHAIN with Add, SENDING, and Dry/Wet 1.00.",
+        "Preserved the untouched native window screenshot and generated only a panel crop."
+      ],
+      "remainingChecks": [
+        "Released-app verification of the CHAIN row layout and controls.",
+        "Full guide interaction sequence, numeric entry, save and reopen in this development build; native coordinate automation returned noWindowsAvailable.",
+        "Windows and Linux UI checks."
+      ],
+      "timing": "Control-location capture only; no output comparison or timed feedback result is published from this session.",
+      "sourceDimensions": {
+        "width": 2880,
+        "height": 1772
+      },
+      "publishedDimensions": {
+        "width": 620,
+        "height": 926
+      },
+      "sourceSha256": "72e2f9627b5dd2b7848d81b959429392d6ced219514aedcd6d1083a4293e08c6",
+      "publishedSha256": "1113f3b384321f25647b081a3e1fc17f9a557daee4e9d8c9933364090daf1ac9"
+    }
+  ]
+}

@@ -184,26 +184,26 @@
     },
     {
       "id": "feedback-controls",
-      "source": "images/guides/feedback-trails/feedback-controls.png",
+      "source": "images/guides/feedback-trails/feedback-chain-controls.png",
       "width": 620,
-      "height": 548,
+      "height": 926,
       "page": "src/content/docs/guides/feedback-trails.md",
       "targets": [
         {
           "number": 1,
           "x": 484,
-          "y": 167,
+          "y": 849,
           "width": 124,
-          "height": 48,
+          "height": 46,
           "label": "Dry/Wet",
           "description": "Set Dry/Wet to 1 to show the loop alone."
         },
         {
           "number": 2,
           "x": 484,
-          "y": 414,
+          "y": 231,
           "width": 124,
-          "height": 47,
+          "height": 46,
           "label": "Decay",
           "description": "Enter 0.975 for the starting trail; lower Decay for a shorter trail."
         }
