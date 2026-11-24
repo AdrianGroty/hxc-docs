@@ -19,6 +19,9 @@ Green marks signal choices and actions, such as a waveform or `+ Add`.
 Orange marks state and selection, such as an armed Learn mode, the active
 tab, or a modulated value.
 
+When a Selector receives modulation, a short orange line marks the option
+in effect now. The ring continues to mark the base choice you set.
+
 ## Speeds
 
 A speed normally shows cycles per second in Hz, such as an LFO's `Rate`,

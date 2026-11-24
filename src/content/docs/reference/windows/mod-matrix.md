@@ -14,8 +14,9 @@ belonging to the current mode, and each remembers whether it was open.
 
 `LIVE` shows how strongly the assignment is moving its target right now, as
 a share of the target's range. At the source's peak the meter reaches the
-percentage shown beside `DEPTH`, so a lower LFO Level or a smaller Depth
-shrinks it, and a negative Depth fills it the other way. The number beside
+percentage shown beside `DEPTH`, so reducing the source's output with a
+processor or using a smaller Depth shrinks it; a negative Depth fills it
+the other way. The number beside
 the meter shows the same change in the target's own units, including
 Offset. `BYP` turns an assignment off without deleting it. The final column deletes it.
 
@@ -26,7 +27,7 @@ Hz too. They stay a rate even when the target shows as time.
 A negative Depth inverts the modulation. Beside it sit an Offset control (`±`), which adds a
 constant offset on top of the swing, and audio shaping controls.
 
-Audio shaping is available only for `L Level` and `R Level` assignments;
+Audio shaping is available only for `Audio L` and `Audio R` assignments;
 other sources leave these controls dimmed. See [Audio-Reactive](../../modulation/audio-reactive/).
 
 Mixer controls can also be modulated from the controls themselves; see
@@ -38,6 +39,12 @@ Mode's own LFO, Envelope and Time banks. Mixer assignments are shared
 across every patch in the same bank and are saved with the bank rather than
 with any individual patch. An assignment's Depth cannot itself be modulated
 in the Mixer Mode matrix.
+
+Audio bands and processors also have modulation targets. A connection
+from a source with processors reads its final output; the matrix does not
+select an intermediate point in its stack. See
+[Processors](../../modulation/processors/) to make a separate source that
+ends earlier in the stack.
 
 Related: [Modulation](../../../concepts/modulation/),
 [Mixer Controls](../mixer-controls/).

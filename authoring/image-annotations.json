@@ -111,33 +111,6 @@
       ]
     },
     {
-      "id": "lfo",
-      "source": "images/getting-started/lfo.png",
-      "width": 620,
-      "height": 795,
-      "page": "src/content/docs/getting-started/05-animate-your-pattern.md",
-      "targets": [
-        {
-          "number": 1,
-          "x": 347,
-          "y": 260,
-          "width": 114,
-          "height": 41,
-          "label": "RATE",
-          "description": "Enter 0.1 Hz in the numeric field beneath RATE."
-        },
-        {
-          "number": 2,
-          "x": 458,
-          "y": 501,
-          "width": 150,
-          "height": 53,
-          "label": "BPM SYNC",
-          "description": "Keep the SYNC Rocker off so RATE is measured in Hz."
-        }
-      ]
-    },
-    {
       "id": "modulation-picker",
       "source": "images/getting-started/modulation-picker.png",
       "width": 900,

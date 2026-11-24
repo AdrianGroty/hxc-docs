@@ -12,6 +12,8 @@ number, and press Enter. In a narrow window the field sits under the Knob.
 
 A macro can also receive modulation. Right-click its Knob and choose
 `Edit Modulation...` to assign an LFO, another macro, or another source.
+Its [processor stack](../processors/) changes the value sent to its targets.
+A Gesture Looper on a macro can record a movement and repeat it.
 
 To bind a hardware controller, open a MIDI input in `Settings > MIDI`,
 engage the macro's `LEARN` Rocker, and move the desired CC control. `Clear`

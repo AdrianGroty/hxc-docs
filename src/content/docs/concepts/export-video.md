@@ -6,7 +6,9 @@ description: "Render a patch at an exact frame rate, make a repeating loop, or e
 Use `File > Export Video...` for a fixed-length clip without the dropped
 frames of an overloaded live recording. It renders the patch frame by
 frame from its beginning, taking as long as each frame needs. The live view
-pauses during export and continues from where it stopped.
+pauses during export and continues from where it stopped. With
+[Ableton Link](../../guides/ableton-link/) enabled, the live picture instead
+catches up to the current session phase when export ends.
 
 Choose a preset with `For`, or set the format, size, frame rate, and quality
 individually. The output keeps the aspect ratio set in `Settings > Output`.
@@ -21,8 +23,9 @@ the whole file; `Smooth gradients` reduces banding.
 Live inputs do not continue during export. MIDI, OpenSoundControl, and
 macro values stay at their starting values. Cameras, NDI, Spout, and
 Syphon inputs hold a still image. Video clips advance with the export.
-Audio sources follow the patch's song when `Use song` is on; otherwise
-they are silent. CV and Gate inputs are silent.
+Audio reactivity receives the patch's song when `Use song` is on, mixed
+with the sound of SOURCE clips whose `AUDIO` is on. Clip sound follows
+the clips even when the song is excluded. CV and Gate inputs are silent.
 
 ## Repeating loops
 
@@ -48,6 +51,14 @@ The loop settings are saved with the patch and also affect built-in motion
 in the live view. See [Perfect loop](../../reference/windows/export-video/#length-and-loops)
 for the checklist, crossfade limits, and motion that follows the loop.
 
+## Export while linked
+
+Export captures the effective Link tempo once when rendering starts. It
+then uses a fixed clock, so later changes from peers do not alter the file.
+The saved `Perfect loop` settings apply to export even while Link suspends
+their live visual wrapping and snapping. Frame rounding can still adjust
+the export tempo for bar and beat loops.
+
 ## Export with a song
 
 `Choose Song...` selects the patch's audio file. With `Use song` on, the
@@ -58,8 +69,15 @@ follow that file while rendering. `Start` sets where the song begins.
 `Include audio track` adds AAC sound to MP4 or Opus sound to WebM. With it
 off, the song still drives the picture. GIF has no audio track.
 
+SOURCE clips with `AUDIO` on add their sound to export reactivity and the
+soundtrack. They follow their own playback speed, direction, and slices.
+The current dialog offers `Include audio track` only with a song selected
+and `Use song` on. With clips alone, their sound can drive the exported
+picture, but the file has no soundtrack.
+
 For a repeating loop, `Audio crossfade` controls the sound independently
-of `Video crossfade`. The dialog reports audio that ends before the video
+of `Video crossfade`; it applies to the song, while clip sound follows
+the clips. The dialog reports audio that ends before the video
 or needs fitting to the loop.
 
 The song and its start point are saved with the patch. `Use song` and
