@@ -13,6 +13,12 @@ description: "How chains, modulation, patches, and output work together."
   ordered effect stack.
 - [Modulation](modulation/): assigning modulation sources
   to parameters.
+- [Modulation Processors](modulation-processors/): reshape a source before
+  it reaches its targets, or combine it with another source.
+- [Audio Reactivity](audio-reactivity/): turn an input's sound into levels,
+  band measurements, and modulation.
+- [Video Clips](video-clips/): regions, slices, triggers, and playback clocks
+  within a SOURCE video.
 - [MIDI and OpenSoundControl Learn](midi-and-opensoundcontrol-learn/): the
   Learn-mode workflow shared by both input protocols.
 - [AUX Sends and Buses](aux-sends-and-buses/): send a module's image to a

@@ -14,6 +14,19 @@ ISF runs an Interactive Shader Format shader. Open `Parameters` and choose
 The module's Insert FX run after the shader. See
 [Insert FX Chains](../../../concepts/insert-fx-chains/).
 
+## Follow a shader file
+
+A shader loaded from a file stays linked to that file. Saving it reloads
+the shader while retaining settings and modulation for matching inputs.
+If a save has errors, the previous shader keeps running and the panel
+shows the errors. Fix the file and save again to retry. Undo returns to
+the shader before a successful reload.
+
+`Unlink` stops following the file and keeps the shader as it is. When a
+patch opens with a linked file that has changed on disk, `Reload` offers
+to load that version. A missing file leaves the saved shader in place;
+automatic reloading resumes when the file is available again.
+
 ## Filters and generators
 
 A shader whose header declares an input with `"TYPE": "image"` (usually

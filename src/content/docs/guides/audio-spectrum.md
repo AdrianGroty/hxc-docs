@@ -26,7 +26,7 @@ top moves and resizes the loop.
 [![The song strip playing an audio file, with elapsed time and a waveform.](../../images/guides/audio-spectrum/song-strip.png)](../../images/guides/audio-spectrum/song-strip.png)
 
 If the ring stays still, check that the song is playing and that
-`Settings > Audio` has `Source` set to `File`.
+`Settings > Audio` has `Source` set to `Song and clips`.
 
 ## 3. Shape the response
 

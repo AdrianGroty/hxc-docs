@@ -58,7 +58,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Guides',
-					items: [{ slug: 'guides' }, { slug: 'guides/audio-spectrum' }, { slug: 'guides/feedback-trails' }, { slug: 'guides/crt-feedback' }],
+					items: [{ slug: 'guides' }, { slug: 'guides/audio-spectrum' }, { slug: 'guides/feedback-trails' }, { slug: 'guides/crt-feedback' }, { slug: 'guides/ableton-link' }],
 				},
 				{
 					label: 'Concepts',
@@ -69,6 +69,9 @@ export default defineConfig({
 						{ slug: 'concepts/patches-slots-and-banks' },
 						{ slug: 'concepts/insert-fx-chains' },
 						{ slug: 'concepts/modulation' },
+						{ slug: 'concepts/modulation-processors' },
+						{ slug: 'concepts/audio-reactivity' },
+						{ slug: 'concepts/video-clips' },
 						{ slug: 'concepts/midi-and-opensoundcontrol-learn' },
 						{ slug: 'concepts/aux-sends-and-buses' },
 						{ slug: 'concepts/chain-groups' },

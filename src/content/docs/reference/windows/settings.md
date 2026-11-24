@@ -8,8 +8,8 @@ bottom can be copied when reporting a problem.
 
 | Category | Settings |
 |---|---|
-| `Output` | Graphics card, resolution and aspect ratio, render quality, display fit, second-display output, and NDI, Spout, or Syphon sending. |
-| `Audio` | Device, application, or file input; song playback device; CV/Gate channel roles; custom frequency bands. See [Audio sources](#audio-sources). |
+| `Output` | Graphics card, optimized clip copies, resolution and aspect ratio, render quality, display fit, second-display output, and NDI, Spout, or Syphon sending. |
+| `Audio` | Device, application, or `Song and clips` input; playback output device; CV/Gate channel roles. See [Audio sources](#audio-sources). |
 | `MIDI` | Controller input ports; clear the patch's MIDI bindings. |
 | `OpenSoundControl` | UDP listen port for incoming messages. |
 | `Recording` | Quality, frame rate, codec, audio inclusion, output folder, and filename pattern. |
@@ -23,7 +23,7 @@ bottom can be copied when reporting a problem.
 |---|---|
 | `Device` | Select an input device, then click `Open`. `Refresh` updates the device list. |
 | `Application` | Select a running application, then click `Open`. Availability depends on the platform and its capture permissions. |
-| `File` | Uses the patch's song. Choose it with `File > Open Song...` or drop an audio file onto the window. `Output` selects where the song is heard. |
+| `Song and clips` | Mixes the patch's song with SOURCE clips whose `AUDIO` is on. Choose a song with `File > Open Song...` or drop an audio file onto the window. `Output` selects where the mix is heard. |
 
 Application capture needs macOS 14.4 or later with capture permission,
 Windows build 20348 or later, or PipeWire on Linux. Read the status shown
@@ -31,14 +31,30 @@ under the application list if capture is unavailable.
 
 `CV/Gate Channels` appears for input channels beyond the stereo pair.
 Assign each channel `Off`, `CV`, or `Gate`, with its voltage range.
-Application and file sources are stereo and do not provide extra CV/Gate
-channels.
+`Application` and `Song and clips` sources are stereo and do not provide
+extra CV/Gate channels.
 
-`Custom Frequency Bands` sets the low and high frequencies for the four
-user bands. These settings apply across patches and audio sources. See
-[Audio-Reactive](../../modulation/audio-reactive/) for level and band
-assignments, or [Make an Audio Spectrum](../../../guides/audio-spectrum/)
-for a song-driven example.
+Frequency bands belong to each patch and are edited in `Modulation > AUDIO`.
+See [Audio-Reactive](../../modulation/audio-reactive/) for their range,
+measurement, and response controls. The Mixer has its own band bank.
+
+Enabling a SOURCE clip's `AUDIO`, or opening a patch that uses clip sound,
+selects `Song and clips`. Choosing another input makes those clips silent.
+The song's play/pause control operates the song; each clip follows its own
+playback controls.
+
+## Optimized clips
+
+`Settings > Output > Optimized Clips` shows the disk space used by local
+playback copies. `Space for copies (GB)` sets their total limit. Copies
+used least recently are removed to make room; copies playing now are kept.
+`Clear Copies` removes cached copies, with a playing copy removed when
+its clip closes. Clips then read their original files until optimized again.
+
+An active optimization shows progress and `Cancel`. Create a copy with
+`Optimize` in [SOURCE](../../modules/source/#optimize-playback) or its
+Clip Editor. Copies are local to this computer; saved patches continue to
+refer to the original video, and Export Video uses that original.
 
 ## Application audio capture
 

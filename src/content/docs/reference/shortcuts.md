@@ -35,6 +35,21 @@ open popup or keyboard-focused control to handle the key.
 |---|---|---|
 | `H` | `H` | Hide or show live controls |
 
+## Clip Editor (while focused)
+
+While the [Clip Editor](../windows/clip-editor/) has keyboard focus, its
+keys act on that SOURCE clip. They are inactive while typing in a text
+field. `Space` plays or pauses the clip instead of the song.
+
+| Key on all platforms | Action |
+|---|---|
+| `Space` | Play or pause the clip. |
+| `Left` / `Right` | Step one frame backward or forward. |
+| `Shift+Left` / `Shift+Right` | Move one second backward or forward. |
+| `Home` / `End` | Jump to the region's first or last frame. |
+| `I` / `O` | Set the region's In or Out at the playhead. |
+| `S` | Add a slice at the playhead. |
+
 ## Chain (while hovered)
 
 Live while the `Chain` window is under the mouse, acting on the selected

@@ -30,21 +30,30 @@ suggests reducing size, colors, or length.
 
 ## Song
 
-The soundtrack is the patch's song, also used by the live song strip.
+The patch's song is also used by the live song strip. SOURCE clips with
+`AUDIO` on supply their sound independently, following their clip playback.
 Supported files include WAV, MP3, FLAC, Ogg, Opus, M4A, AAC, and AIFF.
 
 | Control | Behavior |
 |---|---|
 | `Song` | `Choose Song...` or `Change...` selects an audio file. `Clear` removes the patch's song. |
-| `Use song` | Lets the patch react to the song during export. With it off, the export is silent and audio-driven parameters receive no audio input. |
+| `Use song` | Includes the song in export reactivity and, when enabled, the file's audio track. SOURCE clip sound can still drive reactivity while `Use song` is off. |
 | `Start` | Where playback begins in the song, shared with the song strip's loop start. Live playback also goes back here when it stops. |
-| `Include audio track` | Adds the soundtrack to MP4 (AAC) or WebM (Opus). GIF has no audio track, but its picture can still react to the song. |
+| `Include audio track` | Adds the song and enabled clip sound to MP4 (AAC) or WebM (Opus). The dialog currently offers this control only with a song selected and `Use song` on. GIF has no audio track. |
 | `Use audio length` | Sets `Length` from the audio remaining after `Start`. |
 
 The song and its start belong to the patch. Enable
 `Settings > Patches > Embed assets in save files` to include the audio
 when sharing it. The export's `Use song` and `Include audio track` choices
 are app settings.
+
+A patch with clip sound but no song can drive the exported picture from
+that sound. The dialog does not currently expose an audio-track control
+for a clip-only soundtrack, so that export is silent. Band `LISTEN`
+never filters the sound used for reactivity or the file's soundtrack.
+
+> Clip sound describes the next release. Its export controls and the
+> clip-only soundtrack limitation await live verification in a released app.
 
 ## Length and loops
 
@@ -56,7 +65,7 @@ are app settings.
 | `Audio crossfade` | With a song and the loop on, blends the end of its sound into the music before `Start`. Affects both live song playback and export. |
 
 Length accepts 1–9999 bars, 1–39996 beats, or 0.5 seconds to 24 hours.
-With `File` selected as the audio source, Length is limited to the song
+With `Song and clips` selected and a song loaded, Length is limited to the song
 remaining after `Start`. Any length exports. A GIF longer than 60 seconds
 or a video longer than 10 minutes shows a note: it can take hours to
 render and make a large file. While exporting, the dialog shows the file's
@@ -68,6 +77,12 @@ frames. The change is slight at everyday tempos and can be large for very
 short loops at very fast tempos, such as a single beat at 999 BPM. The
 dialog reports the adjusted BPM. Seconds are rounded
 to whole frames without changing the tempo.
+
+While [Ableton Link](../../../guides/ableton-link/) is enabled, live visual
+wrapping and snapping to `Perfect loop` are suspended. The saved settings
+still apply to export. Export captures the effective BPM once, then ignores
+peer tempo changes while rendering. Returning to the live view reacquires
+Link's current phase, including after cancellation.
 
 ### Crossfades
 

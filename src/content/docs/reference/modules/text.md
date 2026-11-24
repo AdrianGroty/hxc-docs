@@ -6,6 +6,15 @@ description: "Draw, position, size, and scroll text in the video chain using the
 TEXT draws a text block that can stay still or scroll repeatedly across the
 image. It uses bundled, installed, or custom fonts.
 
+Text shaping joins Arabic letters, places combining marks, and handles
+right-to-left text, including lines mixing Hebrew or Arabic with
+left-to-right words. Missing glyphs can come from bundled fonts covering
+Latin, Greek, Cyrillic, Arabic, Hebrew, and Devanagari.
+
+The font's kerning and ligatures affect spacing. A nonzero
+`Letter Spacing` disables optional ligatures while retaining shaping
+required by the script.
+
 | Parameter | Control | Notes |
 |---|---|---|
 | `Font` / `Style` | Selector | Font family and face. `Load Custom...` accepts `.ttf`, `.otf`, or `.ttc`; `Refresh List` reloads installed fonts. Missing fonts use the bundled default and display `(missing)`. |

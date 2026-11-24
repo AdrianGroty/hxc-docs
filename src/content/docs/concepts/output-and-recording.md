@@ -14,6 +14,10 @@ quality, frame rate, codec, and whether to include audio. Files are MP4,
 using H.264 or H.265. The recording contains the output image without the
 app's panels or window borders.
 
+With `Song and clips` selected in `Settings > Audio`, included audio is
+the mix of the song and SOURCE clips with `AUDIO` on. A band's `LISTEN`
+affects monitoring only; recordings keep the full mix.
+
 Start and stop it from the toolbar's `REC` pill, also available in Mixer
 Mode, or with `Ctrl+Alt+R` (`Cmd+Option+R` on macOS).
 
