@@ -26,18 +26,25 @@ Click `+` in `Chain` and choose `FEEDBACK`. Keep `SHAPE` before
 
 Select `FEEDBACK` to open its controls in `Module`.
 
+Keep its `CHAIN` row in `SENDS` on `SENDING`. This is where the feedback
+image joins the chain; its `Dry/Wet` control blends that image with the
+incoming ring.
+
 ## 3. Set the trail
 
 Enter these values:
 
 | Section | Control | Value |
 |---|---|---|
-| `Output` | `Dry/Wet` | `1` |
+| `SENDS > CHAIN` | `Dry/Wet` | `1` |
 | `Loop` | `Amount` | `1` |
 | `Loop` | `Decay` | `0.975` |
 | `Loop` | `Loop Blend` | `Replace` |
 
-![FEEDBACK controls with Dry/Wet 1, Amount 1, Decay 0.975, and Loop Blend Replace.](../../images/guides/feedback-trails/feedback-controls.png)
+![FEEDBACK controls with Amount 1, Decay 0.975, Loop Blend Replace, and Dry/Wet 1 in the CHAIN send.](../../images/guides/feedback-trails/feedback-chain-controls.png)
+
+The capture shows a development build. Its `SENDS > CHAIN` controls still
+need verification in the released app.
 
 `Loop Blend` set to `Replace` paints the current ring over the loop.
 The rest of the `SHAPE` frame is transparent, so earlier rings remain
