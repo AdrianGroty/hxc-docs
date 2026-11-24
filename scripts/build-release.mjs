@@ -11,6 +11,7 @@ if (!/^\/(?:[A-Za-z0-9._-]+\/)+$/.test(base) || base.split('/').includes('..'))
 const commit = process.env.VIZARD_DOCS_COMMIT || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 if (!/^[a-f0-9]{40}$/.test(commit)) throw new Error('Invalid documentation commit');
 execFileSync(process.execPath, ['scripts/check-docs.mjs'], { stdio: 'inherit' });
+execFileSync(process.execPath, ['scripts/check-authoring.mjs'], { stdio: 'inherit' });
 execFileSync(process.execPath, ['node_modules/astro/bin/astro.mjs', 'build'], {
   stdio: 'inherit', env: { ...process.env, VIZARD_DOCS_VERSION: version, VIZARD_DOCS_BASE: base },
 });

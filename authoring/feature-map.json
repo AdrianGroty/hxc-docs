@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "scope": "pilot",
+  "features": [
+    {
+      "id": "feedback.loop",
+      "description": "FEEDBACK loop controls and the feedback trail recipe, with related CRT guidance.",
+      "pages": [
+        "src/content/docs/guides/feedback-trails.md",
+        "src/content/docs/guides/crt-feedback.md",
+        "src/content/docs/reference/modules/feedback.md"
+      ],
+      "images": [
+        "public/images/guides/feedback-trails/source-ring.png",
+        "public/images/guides/feedback-trails/result.png",
+        "public/images/guides/feedback-trails/feedback-chain-controls.png",
+        "public/images/guides/crt-feedback/result.png"
+      ],
+      "patches": [
+        "public/examples/feedback-ring-start.hxc",
+        "public/examples/feedback-trails.hxc",
+        "public/examples/crt-feedback.hxc"
+      ],
+      "scenarios": [
+        "authoring/scenarios/feedback-trails.json"
+      ]
+    },
+    {
+      "id": "module.chain-send",
+      "description": "Shared CHAIN contribution, its state controls, and FEEDBACK routing exceptions.",
+      "pages": [
+        "src/content/docs/concepts/signal-chain.md",
+        "src/content/docs/reference/modules/feedback.md",
+        "src/content/docs/guides/feedback-trails.md",
+        "src/content/docs/guides/crt-feedback.md"
+      ],
+      "images": [
+        "public/images/guides/feedback-trails/feedback-chain-controls.png"
+      ],
+      "patches": [],
+      "scenarios": []
+    }
+  ]
+}
