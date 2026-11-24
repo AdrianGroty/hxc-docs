@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "kind": "native-walkthrough",
+  "method": "normal-controls",
+  "scenario": "authoring/scenarios/feedback-trails.json",
+  "app": {
+    "commit": null,
+    "version": null,
+    "executableSha256": null,
+    "platform": null,
+    "distribution": null
+  },
+  "preflight": [
+    { "id": "focus-window", "status": "pending", "observation": "" },
+    { "id": "open-section", "status": "pending", "observation": "" },
+    { "id": "enter-number", "status": "pending", "observation": "" },
+    { "id": "cancel-open", "status": "pending", "observation": "" }
+  ],
+  "steps": [
+    { "id": "open-starting-patch", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "observe-starting-ring", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "add-feedback", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "select-feedback", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "chain-sending", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "set-dry-wet", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "set-amount", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "set-decay", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "set-loop-blend", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "observe-trail", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "compare-dry-wet", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "compare-decay", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "save-copy", "status": "pending", "observation": "", "evidence": [] },
+    { "id": "reopen-copy", "status": "pending", "observation": "", "evidence": [] }
+  ]
+}

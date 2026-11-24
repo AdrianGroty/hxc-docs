@@ -58,6 +58,31 @@ For platform-specific steps, verify the actual binding or availability.
 Do not infer that substituting `Cmd` for `Ctrl` is sufficient. A capture on
 one platform does not establish the others' behavior.
 
+### Track reviewed content
+
+The [authoring pilot](authoring/README.md) maps FEEDBACK and shared CHAIN
+controls to their pages, assets, and verification evidence. When changing
+mapped material, review the affected input and update its verification
+record. A changed hash calls for review, not automatic recapture: an image
+can remain accurate after a prose correction or an unrelated app change.
+Keep unfinished checks pending with a reason instead of advancing their
+status because a site build passed.
+
+Use the [FEEDBACK scenario](authoring/scenarios/feedback-trails.json) and
+[pending run record](authoring/verification/feedback-trails.pending.json)
+for a repeatable native walkthrough. Follow the
+[run instructions](authoring/verification/README.md) to identify the app,
+check automation before relying on it, and record completed actions.
+Loading a finished patch is a control observation; it does not establish
+that a reader can complete the procedure or save and reopen a copy.
+
+`npm run check:authoring` validates the pilot's references, reviewed hashes,
+and active capture provenance. Normal checks and release-manual builds run
+the same validator. Pending checks and material outside the pilot are
+reported separately from invalid or stale records. The pilot does not
+compare app revisions or establish release readiness; those checks require
+the planned app-side integration.
+
 ## Capture and preserve evidence
 
 Use real screen captures for UI and real app output for result images.

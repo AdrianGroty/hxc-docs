@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "feedback-trails",
+  "page": "src/content/docs/guides/feedback-trails.md",
+  "startingPatch": "public/examples/feedback-ring-start.hxc",
+  "finishedPatch": "public/examples/feedback-trails.hxc",
+  "preflight": [
+    {
+      "id": "focus-window",
+      "action": "Use an isolated profile and disposable patch. Bring the identified app window to the foreground with the native tool being evaluated. Allow at most five minutes for the whole preflight.",
+      "expected": "The tool observes the foreground app window and its current controls. If reliable input is unavailable within the limit, leave the walkthrough pending and record the blocker."
+    },
+    {
+      "id": "open-section",
+      "action": "In the disposable patch, collapse and reopen a visible Module section using its section header.",
+      "expected": "The section contents disappear and return. The observed response confirms that the tool targeted the intended app control."
+    },
+    {
+      "id": "enter-number",
+      "action": "In the disposable profile, enter 120 in the BPM numeric field through the normal control and commit the edit.",
+      "expected": "The numeric edit accepts the entered text and the committed BPM reads 120. No production profile or original patch is changed."
+    },
+    {
+      "id": "cancel-open",
+      "action": "Choose File > Open..., then cancel the native file chooser without choosing a file.",
+      "expected": "The chooser closes and the disposable patch remains loaded. Opening a chooser alone does not establish that opening or saving a patch works."
+    }
+  ],
+  "steps": [
+    {
+      "id": "open-starting-patch",
+      "action": "Open a copy of public/examples/feedback-ring-start.hxc through File > Open....",
+      "expected": "The patch opens with one SHAPE module and no missing audio or media input."
+    },
+    {
+      "id": "observe-starting-ring",
+      "action": "Observe Output before adding FEEDBACK.",
+      "expected": "One thin cyan ring grows and shrinks around its center."
+    },
+    {
+      "id": "add-feedback",
+      "action": "Click + in Chain and choose FEEDBACK. Keep SHAPE before FEEDBACK in the chain.",
+      "expected": "Chain shows SHAPE followed by FEEDBACK."
+    },
+    {
+      "id": "select-feedback",
+      "action": "Select FEEDBACK in Chain.",
+      "expected": "Module shows the FEEDBACK controls, including Loop and SENDS."
+    },
+    {
+      "id": "chain-sending",
+      "action": "Find the CHAIN row in SENDS and keep it on SENDING.",
+      "expected": "The CHAIN row exists, shows SENDING, and contains Dry/Wet."
+    },
+    {
+      "id": "set-dry-wet",
+      "action": "Enter 1 in Dry/Wet in SENDS > CHAIN through its numeric field and commit the edit.",
+      "expected": "Dry/Wet reads 1.00."
+    },
+    {
+      "id": "set-amount",
+      "action": "Enter 1 in Loop > Amount through its numeric field and commit the edit.",
+      "expected": "Amount reads 1.00."
+    },
+    {
+      "id": "set-decay",
+      "action": "Enter 0.975 in Loop > Decay through its numeric field and commit the edit.",
+      "expected": "Decay reads 0.975."
+    },
+    {
+      "id": "set-loop-blend",
+      "action": "Choose Replace in Loop Blend.",
+      "expected": "Loop Blend shows Replace."
+    },
+    {
+      "id": "observe-trail",
+      "action": "Observe Output while the ring pulses.",
+      "expected": "Fading copies remain behind the changing cyan ring. The result is visibly different from the clean starting ring."
+    },
+    {
+      "id": "compare-dry-wet",
+      "action": "Lower Dry/Wet to compare the clean ring with its trail, then return it to 1.",
+      "expected": "Dry/Wet changes the balance between the incoming ring and the loop. Its final value is 1.00."
+    },
+    {
+      "id": "compare-decay",
+      "action": "Lower Decay to compare trail length, then return it to 0.975.",
+      "expected": "The lower value produces a shorter trail. The restored recipe shows Decay 0.975, Amount 1.00, Loop Blend Replace, CHAIN SENDING, and Dry/Wet 1.00."
+    },
+    {
+      "id": "save-copy",
+      "action": "Choose File > Save As... and save Feedback trails.hxc in a fresh disposable directory. Wait for the write to finish; preserve the supplied example files.",
+      "expected": "The save completes without an error, the file exists and is nonempty, and the app no longer reports unsaved changes for the saved patch. A chooser selection or queued write alone is insufficient."
+    },
+    {
+      "id": "reopen-copy",
+      "action": "Open the starting patch to replace the current in-memory state, then reopen the saved copy through File > Open... and select FEEDBACK. Confirm the restored controls and observe Output.",
+      "expected": "The saved copy opens without an error. The chain remains SHAPE before FEEDBACK, with CHAIN SENDING, Dry/Wet 1.00, Amount 1.00, Decay 0.975, and Loop Blend Replace. The pulsing ring leaves fading copies."
+    }
+  ]
+}

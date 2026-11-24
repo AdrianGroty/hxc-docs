@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "featureId": "feedback.loop",
+      "reviewedAppCommit": "f4692c2bd762e55bd36e534559d10fa415911e7b",
+      "inputs": {
+        "authoring/captures/2026-11-24/manifest.json": "a1781a9bec80d39d61a77d3761aac22434824399cf7e373ba671071dccfb967c",
+        "authoring/image-annotations.json": "b9d27a000aa989d7fe79e2e67350edf5853a3d0ad743e99253dc2d501a485cff",
+        "authoring/reviews/2026-11-24/feedback-capture.md": "7cb4b55728c4351ce294ac1b525a2e05f211a02790471c5fb88da8deaadf34fc",
+        "authoring/reviews/2026-11-24/feedback-controls-desktop.png": "cd27d99b98eb59ea07b5313690f5845e14afaf0cbb65c6ac797e3c1e54bddff8",
+        "authoring/reviews/2026-11-24/feedback-controls-phone.png": "8528853346d3cd371d0a23e20a693ffc1be4abc161dc8c9a630e1b645a6367d2",
+        "authoring/scenarios/feedback-trails.json": "e3ac06b272cce13579a7a48afa3c9862ae8f2ab46506dc62252850c55084b1f0",
+        "authoring/verification/feedback-trails.pending.json": "d2ac7be6e69a8ab7b998751f99bb1984c317acbcde91307aff0ecf5a4539ad3f",
+        "public/examples/crt-feedback.hxc": "d2a7deb4bcf4501e6d57853cccc6e2b6d1c63442a83307c0f864e53763538274",
+        "public/examples/feedback-ring-start.hxc": "4c9e811468934e15982d6d52ff444210cff95c7f91b8b0562c73e9c2de44426e",
+        "public/examples/feedback-trails.hxc": "39430a66653f43d51ca4dc119cfd242aea486fe6095ae4835426edd026917be8",
+        "public/images/guides/crt-feedback/result.png": "4726f6d54459aaed2229dabe1bb1a48bb7a62edb2be0f2958a2001bcc9241d36",
+        "public/images/guides/feedback-trails/feedback-chain-controls.png": "1113f3b384321f25647b081a3e1fc17f9a557daee4e9d8c9933364090daf1ac9",
+        "public/images/guides/feedback-trails/result.png": "7b9135dea366e3e448bdd479272937676022863c206510aaf95be1bbb03229c7",
+        "public/images/guides/feedback-trails/source-ring.png": "496f905b84102dfd74edd7d4c707c2ab190b16ff303064abc623ab96241450b4",
+        "src/content/docs/guides/crt-feedback.md": "de8e202ebf4f1e8a55173729b077d93d704f35ccc06cbb77041571af391d0205",
+        "src/content/docs/guides/feedback-trails.md": "58d23e0214b5fb1e8cb0d648075067c99a4959d4db937347a0ad68e7117cdc6c",
+        "src/content/docs/reference/modules/feedback.md": "6b3d745dc7f8e4da9874fd5bc1f5dd004b2881bd40871d3419e3a2b7652cfa85"
+      },
+      "checks": [
+        {
+          "kind": "source-review",
+          "status": "passed",
+          "targets": [
+            "src/content/docs/guides/feedback-trails.md",
+            "src/content/docs/guides/crt-feedback.md",
+            "src/content/docs/reference/modules/feedback.md"
+          ],
+          "evidence": [
+            "authoring/reviews/2026-11-24/feedback-capture.md"
+          ],
+          "reason": "Reuses the identified source/reader review of the CHAIN locations, state semantics, routing exception, and related FEEDBACK instructions. It does not establish native interaction."
+        },
+        {
+          "kind": "native-observation",
+          "status": "passed",
+          "targets": [
+            "public/images/guides/feedback-trails/feedback-chain-controls.png"
+          ],
+          "evidence": [
+            "authoring/captures/2026-11-24/manifest.json",
+            "authoring/reviews/2026-11-24/feedback-capture.md"
+          ],
+          "reason": "FEEDBACK controls and saved values observed in the identified development build only. Other modules, guide actions, and the CRT result were not tested by this capture."
+        },
+        {
+          "kind": "rendered-page",
+          "status": "passed",
+          "targets": [
+            "src/content/docs/guides/feedback-trails.md",
+            "public/images/guides/feedback-trails/feedback-chain-controls.png"
+          ],
+          "evidence": [
+            "authoring/reviews/2026-11-24/feedback-capture.md",
+            "authoring/reviews/2026-11-24/feedback-controls-desktop.png",
+            "authoring/reviews/2026-11-24/feedback-controls-phone.png"
+          ],
+          "reason": "Reuses the desktop and 390px review of this guide figure and keyboard access to its clean image. Other mapped pages are outside this check."
+        },
+        {
+          "kind": "walkthrough",
+          "status": "pending",
+          "targets": [
+            "authoring/scenarios/feedback-trails.json"
+          ],
+          "evidence": [
+            "authoring/verification/feedback-trails.pending.json"
+          ],
+          "reason": "The full current-build native procedure has not been completed. The prior capture loaded saved settings; numeric entry and the complete guide sequence remain pending. Shared module state interactions also need live coverage."
+        },
+        {
+          "kind": "save-reopen",
+          "status": "pending",
+          "targets": [
+            "public/examples/feedback-ring-start.hxc",
+            "public/examples/feedback-trails.hxc",
+            "public/examples/crt-feedback.hxc"
+          ],
+          "evidence": [
+            "authoring/verification/feedback-trails.pending.json"
+          ],
+          "reason": "No new native completed-write and reopen check has been performed for the current development build. The pending run records no completed actions."
+        },
+        {
+          "kind": "packaged-help",
+          "status": "not-assessed",
+          "targets": [
+            "src/content/docs/guides/feedback-trails.md",
+            "src/content/docs/guides/crt-feedback.md",
+            "src/content/docs/reference/modules/feedback.md"
+          ],
+          "evidence": [],
+          "reason": "No distributable package or installed Help interaction was checked in this pilot."
+        }
+      ]
+    },
+    {
+      "featureId": "module.chain-send",
+      "reviewedAppCommit": "f4692c2bd762e55bd36e534559d10fa415911e7b",
+      "inputs": {
+        "authoring/captures/2026-11-24/manifest.json": "a1781a9bec80d39d61a77d3761aac22434824399cf7e373ba671071dccfb967c",
+        "authoring/image-annotations.json": "b9d27a000aa989d7fe79e2e67350edf5853a3d0ad743e99253dc2d501a485cff",
+        "authoring/reviews/2026-11-24/feedback-capture.md": "7cb4b55728c4351ce294ac1b525a2e05f211a02790471c5fb88da8deaadf34fc",
+        "authoring/reviews/2026-11-24/feedback-controls-desktop.png": "cd27d99b98eb59ea07b5313690f5845e14afaf0cbb65c6ac797e3c1e54bddff8",
+        "authoring/reviews/2026-11-24/feedback-controls-phone.png": "8528853346d3cd371d0a23e20a693ffc1be4abc161dc8c9a630e1b645a6367d2",
+        "public/images/guides/feedback-trails/feedback-chain-controls.png": "1113f3b384321f25647b081a3e1fc17f9a557daee4e9d8c9933364090daf1ac9",
+        "src/content/docs/concepts/signal-chain.md": "dffb77d834653a0da4bf00b26154c6de1a4cf369453f959dde64205eded8adb7",
+        "src/content/docs/guides/crt-feedback.md": "de8e202ebf4f1e8a55173729b077d93d704f35ccc06cbb77041571af391d0205",
+        "src/content/docs/guides/feedback-trails.md": "58d23e0214b5fb1e8cb0d648075067c99a4959d4db937347a0ad68e7117cdc6c",
+        "src/content/docs/reference/modules/feedback.md": "6b3d745dc7f8e4da9874fd5bc1f5dd004b2881bd40871d3419e3a2b7652cfa85"
+      },
+      "checks": [
+        {
+          "kind": "source-review",
+          "status": "passed",
+          "targets": [
+            "src/content/docs/concepts/signal-chain.md",
+            "src/content/docs/reference/modules/feedback.md",
+            "src/content/docs/guides/feedback-trails.md",
+            "src/content/docs/guides/crt-feedback.md"
+          ],
+          "evidence": [
+            "authoring/reviews/2026-11-24/feedback-capture.md"
+          ],
+          "reason": "Reuses the identified source/reader review of the CHAIN locations, state semantics, routing exception, and related FEEDBACK instructions. It does not establish native interaction."
+        },
+        {
+          "kind": "native-observation",
+          "status": "passed",
+          "targets": [
+            "public/images/guides/feedback-trails/feedback-chain-controls.png"
+          ],
+          "evidence": [
+            "authoring/captures/2026-11-24/manifest.json",
+            "authoring/reviews/2026-11-24/feedback-capture.md"
+          ],
+          "reason": "FEEDBACK controls and saved values observed in the identified development build only. Other modules, guide actions, and the CRT result were not tested by this capture."
+        },
+        {
+          "kind": "rendered-page",
+          "status": "passed",
+          "targets": [
+            "src/content/docs/guides/feedback-trails.md",
+            "public/images/guides/feedback-trails/feedback-chain-controls.png"
+          ],
+          "evidence": [
+            "authoring/reviews/2026-11-24/feedback-capture.md",
+            "authoring/reviews/2026-11-24/feedback-controls-desktop.png",
+            "authoring/reviews/2026-11-24/feedback-controls-phone.png"
+          ],
+          "reason": "Reuses the desktop and 390px review of this guide figure and keyboard access to its clean image. Other mapped pages are outside this check."
+        },
+        {
+          "kind": "walkthrough",
+          "status": "pending",
+          "targets": [
+            "src/content/docs/concepts/signal-chain.md",
+            "src/content/docs/reference/modules/feedback.md",
+            "src/content/docs/guides/feedback-trails.md",
+            "src/content/docs/guides/crt-feedback.md"
+          ],
+          "evidence": [],
+          "reason": "The full current-build native procedure has not been completed. The prior capture loaded saved settings; numeric entry and the complete guide sequence remain pending. Shared module state interactions also need live coverage."
+        },
+        {
+          "kind": "save-reopen",
+          "status": "pending",
+          "targets": [
+            "src/content/docs/guides/feedback-trails.md",
+            "src/content/docs/guides/crt-feedback.md"
+          ],
+          "evidence": [],
+          "reason": "No new native completed-write and reopen check has been performed for the current development build. The pending run records no completed actions."
+        },
+        {
+          "kind": "packaged-help",
+          "status": "not-assessed",
+          "targets": [
+            "src/content/docs/concepts/signal-chain.md",
+            "src/content/docs/reference/modules/feedback.md",
+            "src/content/docs/guides/feedback-trails.md",
+            "src/content/docs/guides/crt-feedback.md"
+          ],
+          "evidence": [],
+          "reason": "No distributable package or installed Help interaction was checked in this pilot."
+        }
+      ]
+    }
+  ]
+}
